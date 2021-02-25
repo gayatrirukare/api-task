@@ -1,0 +1,88 @@
+import react, { Component } from 'react'
+import axios from 'axios'
+
+class MarketTest extends Component {
+    
+    constructor(props) {
+        super(props)
+        this.state = {
+            zip:'',
+            a: []
+        }
+    }
+    
+    handleTopicChange = (event) =>{
+        this.setState({
+            zip: event.target.value
+        })
+    }
+    
+    handleSubmit =event =>{
+        event.preventDefault();
+        const zip =this.state.zip
+        axios.get ('https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip='+zip)
+        .then(response => {
+            console.log(response.data)
+            this.setState({a: response.data})
+        })
+        .catch(error => {
+           console.log(error)
+        })
+            
+    }
+
+    renderTableHeader=() => {
+        return Object.keys(this.state.a[0]).map(attr => <th key={attr}>{attr.toUpperCase()}</th> )
+        
+    }
+    renderTableRows= () => {
+        return this.state.a.map (result =>{
+            return(
+                <tr key={result.id}>
+                    <td>{result.id}</td>
+                    <td>{result.marketname}</td>
+                </tr>
+            )
+        })
+    }
+    
+    render(){
+        return (
+            <div>
+                <h1>Markets near you</h1>
+                <div>
+                    <div className="input-group mb-3">
+                        <input type="text" className="form-control" placeholder="Enter ZIP"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={this.handleTopicChange} />
+                        <div className="input-group-append">
+                            <button className="input-group-text" id="basic-addon2" onClick={this.handleSubmit}>Zip </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {
+                        
+                        
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {this.renderTableHeader()}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.renderTableRows()}
+                                </tbody>
+                            </table>
+                    
+                            
+                    
+                        }
+                </div>
+            
+            </div>
+        )
+    }
+     
+}
+export default MarketTest
+
