@@ -1,6 +1,6 @@
 import react, { Component } from 'react'
 import axios from 'axios'
-import Display from './Display'
+
 
 class Market extends Component {
     
