@@ -14,14 +14,14 @@ function TableApp() {
   const columns= useMemo(() =>
    [
       {
-        Header : "group",
+        Header : "Market Information",
         columns: [
             {
               Header: "ID",
               accessor: "id"
             },
             {
-              Header: "Name",
+              Header: "Market Name",
               accessor: "marketname"
             }
           ]
@@ -30,7 +30,7 @@ function TableApp() {
   
   return (
     <div className="App">
-      < Market dataFromMarket={passData} a="c"/>
+      < Market dataFromMarket={passData} />
       <Table columns={columns} data={data} />
       
     </div>

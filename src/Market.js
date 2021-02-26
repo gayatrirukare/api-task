@@ -1,5 +1,10 @@
 import react, { Component } from 'react'
-import axios from 'axios'
+import axios from 'axios' 
+import 'antd/dist/antd.css';
+import './index.css';
+import { Button , Input } from 'antd';
+import styles from './mystyle.module.css'; 
+
 
 
 class Market extends Component {
@@ -40,11 +45,14 @@ class Market extends Component {
             <div>
                 <h1>Markets near you</h1>
                 <div>
-                    <div className="input-group mb-3">
-                        <input type="text" className="form-control" placeholder="Enter ZIP"
-                        aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={this.handleTopicChange} />
-                        <div className="input-group-append">
-                            <button className="input-group-text" id="basic-addon2" onClick={this.handleSubmit}>Zip </button>
+                    <div className={styles.inputGroup }>
+                        <Input type="number"  className={styles.inputText} placeholder="Enter ZIP"
+                        aria-label="Enter ZIP Code" aria-describedby="basic-addon2" onChange={this.handleTopicChange} />
+                        <div className="input-group-append" >
+                        <Button type="primary" className={styles.primaryBtn} onClick={this.handleSubmit} >
+                            Search 
+                        </Button>
+                          {/*  <button className="input-group-text" id="basic-addon2" onClick={this.handleSubmit}>Search</button>  */}
                         </div>
                     </div>
                 </div>
