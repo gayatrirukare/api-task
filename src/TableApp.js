@@ -8,21 +8,32 @@ function TableApp() {
   const [data, setData] = useState([]);
 
   function passData(results){
-    setData(results)
+  
+    var newArr = results.map(function(item){
+      
+      return {
+          id: item.id,
+          marketname: item.marketname.slice(item.marketname.indexOf(" ")+1, item.marketname.length),
+          distance:item.marketname.split(" ")[0]
+        };
+
+   });
+    setData(newArr)
   }
   
   const columns= useMemo(() =>
    [
       {
-        Header : "group",
+        Header : "Market Information",
         columns: [
+            
             {
-              Header: "ID",
-              accessor: "id"
+              Header: "Market Name",
+              accessor: "marketname"
             },
             {
-              Header: "Name",
-              accessor: "marketname"
+              Header : "Distance From ZIP",
+              accessor: "distance"
             }
           ]
 
@@ -30,7 +41,7 @@ function TableApp() {
   
   return (
     <div className="App">
-      < Market dataFromMarket={passData} a="c"/>
+      < Market dataFromMarket={passData} />
       <Table columns={columns} data={data} />
       
     </div>
