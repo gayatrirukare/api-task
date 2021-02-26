@@ -47,7 +47,10 @@ function Table({columns , data}) {
                   background: '#e3ebec',
                 }}
                 >
-                  {cell.render("Cell")}</td>;
+                  <a>{data[i].id}
+                  {cell.render("Cell")}
+                  </a>
+                  </td>;
               })}
             </tr>
           );
