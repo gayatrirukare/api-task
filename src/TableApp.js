@@ -2,9 +2,9 @@ import React, { useState, useEffect, useMemo } from "react";
 import Table from "./Table";
 import "./App.css";
 import Market from './Market'
+import Details from "./Details"
 
 function TableApp() {
-  
   const [data, setData] = useState([]);
 
   function passData(results){
@@ -42,7 +42,8 @@ function TableApp() {
   return (
     <div className="App">
       < Market dataFromMarket={passData} />
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} showDetails={Details.getData}/>
+      <Details/>
       
     </div>
   );

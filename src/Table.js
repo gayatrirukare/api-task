@@ -1,8 +1,8 @@
 import react from 'react'
 import {useTable} from 'react-table'
 
-function Table({columns , data}) {
-    
+function Table(props) {
+  const {columns , data }= props;
     const {
         getTableProps,
         getTableBodyProps,
@@ -46,11 +46,12 @@ function Table({columns , data}) {
                   border: 'solid 1px gray',
                   background: '#e3ebec',
                 }}
+                ><a  onClick={ () => props.showDetails(data[i].id)}
+                style = {{
+                  color: 'black'
+                }}
                 >
-                  <a>{data[i].id}
-                  {cell.render("Cell")}
-                  </a>
-                  </td>;
+                  {cell.render("Cell")}</a></td>;
               })}
             </tr>
           );

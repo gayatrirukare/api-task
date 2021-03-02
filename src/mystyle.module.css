@@ -1,0 +1,16 @@
+.inputGroup{
+    margin: auto;
+    font-family: Arial;
+    width:200px;
+    height: auto;
+    display: inline-flex;
+  };
+  .header1{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-weight: 600;
+   color: rgb(74 57 142 / 94%);
+  }
+  .btn{
+    border-radius: 2 px;
+    margin-left: 5%;
+  }
