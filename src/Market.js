@@ -22,7 +22,16 @@ class Market extends Component {
             zip: event.target.value
         })
     }
+    handleKeypress = event => {
+
+        if (event.charCode === 13) {
+            
+          this.handleSubmit(event);
+        }
+        
+      };
     
+
     handleSubmit =event =>{
         event.preventDefault();
         const zip =this.state.zip
@@ -43,13 +52,13 @@ class Market extends Component {
     render(){
         return (
             <div>
-                <h1>Markets near you</h1>
+                <h1 className={styles.header1 } >Markets near you</h1>
                 <div>
                     <div className={styles.inputGroup }>
                         <Input type="number"  className={styles.inputText} placeholder="Enter ZIP"
-                        aria-label="Enter ZIP Code" aria-describedby="basic-addon2" onChange={this.handleTopicChange} />
-                        <div className="input-group-append" >
-                        <Button type="primary" className={styles.primaryBtn} onClick={this.handleSubmit} >
+                        aria-label="Enter ZIP Code" aria-describedby="basic-addon2" onChange={this.handleTopicChange} onKeyPress={this.handleKeypress} />
+                        <div  className={styles.btn} >
+                        <Button type="primary"  className={styles.primaryBtn} onClick={this.handleSubmit} >
                             Search 
                         </Button>
                           {/*  <button className="input-group-text" id="basic-addon2" onClick={this.handleSubmit}>Search</button>  */}
