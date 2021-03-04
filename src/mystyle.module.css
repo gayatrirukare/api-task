@@ -1,3 +1,7 @@
+body{
+background-color: rgb(134, 133, 133);
+}
+
 .inputGroup{
     margin: auto;
     font-family: Arial;
@@ -5,12 +9,66 @@
     height: auto;
     display: inline-flex;
   };
-  .header1{
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   font-weight: 600;
-   color: rgb(74 57 142 / 94%);
+  .pt{
+    margin-top: 5%;
   }
   .btn{
     border-radius: 2 px;
     margin-left: 5%;
+  }
+  .primaryBtn{
+    background-color: black;
+    box-shadow: 5px 10 px white;
+  }
+  .t1{
+    margin-left: 2%;
+    
+  }
+  .d1{
+    box-shadow: 1px 1px 5px 1px #fff;
+    border: white;
+    border-style: inset;
+    border-width: thin;
+    font-size: medium;
+    text-align: left;
+    background-color: #212529;
+    width: 600px;
+    height: fit-content;
+    margin-left: 5%;
+    padding-left: 4%;
+    padding-right: 10%;
+   padding-top: 2%;
+  }
+  .d1 h5{
+    text-align:  Center;
+    color: blanchedalmond;
+  }
+  .td1{
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    
+  }
+  .d1A{
+    font-weight:600;
+    margin-right: 1%;
+  
+  }
+  .d2{
+    display: flex;
+    padding-right: 4%;
+    color :blanchedalmond;
+    border-bottom: wheat;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    margin-bottom: 12px;
+
+  }
+  .d2:last-child{
+    border-bottom-style: none;
+  }
+
+  .tablediv {
+    box-shadow: 1px 1px 5px 1px #fff;
   }

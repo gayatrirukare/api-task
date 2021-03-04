@@ -6,46 +6,43 @@ import { Button , Input } from 'antd';
 import styles from './mystyle.module.css'; 
 import Table from './Table'
 
-
-
 class Details extends Component {
     
     constructor(props) {
         super(props)
         this.state = {
-            mid:''
-        }
-    
-
-       function getData(id) {
-            
-            this.preventDefault();
-
-            const mtid =this.state.mid
-            axios.get ('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id='+id)
-            .then(response => {
-                console.log(response)
-              this.marketDetails(response)
-               
-                
-            })
-            .catch(error => {
-               console.log(error)
-            })
-        }
-
         
+            "Address" : '',
+            "GoogleLink" :'',
+            "Products":'',
+            "Schedule":''           
+        }
     }
+    
     render(){
         return (
-            <div>
+            <div className={styles.d1}>
+                <h5>Market Details</h5>
+                <div className={styles.d2}>
+                    <p className={styles.d1A}>Address:</p> {this.props.details.Address}
+                </div>
+                <div className={styles.d2}>
+                    <p className={styles.d1A}><a target="_blank" href={this.props.details.GoogleLink}>GoogleLink</a></p>
+                </div>
+                <div className={styles.d2}> 
+                    <p className={styles.d1A}>Products:</p> {this.props.details.Products}
+                </div>
+                <div className={styles.d2}>
+                    <p className={styles.d1A}>Schedule:</p> {this.props.details.Schedule}
+                </div>
                 
             </div>
         )
     }
+   
+    }
                 
     
      
-}
 export default Details
 
