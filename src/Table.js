@@ -13,19 +13,19 @@ function Table(props) {
         columns,
         data
     });
-
+        
 
     return (
         <table {...getTableProps()}>
-      <thead style={{ border: 'solid 1px blue' }}>
+      <thead style={{ border: 'solid 1px gray' }}>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
               <th {...column.getHeaderProps()}
               style={{
                 borderBottom: 'solid 3px #1e4f7bc2',
-                background: 'aliceblue',
-                color: 'black',
+                background: '#212529',
+                color: 'white',
                 fontWeight: 'bold',
               }}
               >
@@ -44,15 +44,19 @@ function Table(props) {
                 style={{
                   padding: '10px',
                   border: 'solid 1px gray',
-                  background: '#e3ebec',
+                  background: 'rgb(45 50 56)',
+                  color:'white'
                 }}
                 ><a  onClick={ () => props.showDetails(data[i].id)}
                 style = {{
-                  color: 'black'
+                  color: 'white'
                 }}
-                >
-                  {cell.render("Cell")}</a></td>;
-              })}
+                > 
+                  {cell.render("Cell")}
+                
+                  </a></td>;
+                  
+              })} 
             </tr>
           );
         })}

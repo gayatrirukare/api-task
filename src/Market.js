@@ -1,5 +1,4 @@
-import react, { Component } from 'react'
-import axios from 'axios' 
+import react, { Component } from 'react' 
 import 'antd/dist/antd.css';
 import './index.css';
 import { Button , Input } from 'antd';
@@ -12,14 +11,14 @@ class Market extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            zip:''
-        }
-        console.log(props)
+            zips:''
+        }    
     }
-    
+      
     handleTopicChange = (event) =>{
         this.setState({
             zip: event.target.value
+        
         })
     }
     handleKeypress = event => {
@@ -30,29 +29,22 @@ class Market extends Component {
         }
         
       };
-    
-
     handleSubmit =event =>{
         event.preventDefault();
-        const zip =this.state.zip
-        axios.get ('https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip='+zip)
-        .then(response => {
-            console.log(this.props.a)
-          this.props.dataFromMarket(response.data.results)
-           
-            
-        })
-        .catch(error => {
-           console.log(error)
-        })
+        const zip =this.state.zip;
+        this.props.getZipCode(zip);
+        console.log(zip)
+        
             
     }
 
     
     render(){
         return (
-            <div>
-                <h1 className={styles.header1 } >Markets near you</h1>
+            <div className={styles.pt}>
+                <h1 style={{
+                color: 'rgb(241 236 236)',
+              }}>Markets near you</h1>
                 <div>
                     <div className={styles.inputGroup }>
                         <Input type="number"  className={styles.inputText} placeholder="Enter ZIP"
@@ -61,7 +53,7 @@ class Market extends Component {
                         <Button type="primary"  className={styles.primaryBtn} onClick={this.handleSubmit} >
                             Search 
                         </Button>
-                          {/*  <button className="input-group-text" id="basic-addon2" onClick={this.handleSubmit}>Search</button>  */}
+
                         </div>
                     </div>
                 </div>
