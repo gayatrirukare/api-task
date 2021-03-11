@@ -61,10 +61,8 @@ function App() {
   return (
     <div className="App">
         < Market getZipCode={getZip}/>
-      <div className={styles.td1}>
-          <div class={styles.tablediv} style={{display: data ? "block" : "none" }}>
+      <div className={styles.tableDetail}>
             <Table columns={columns} data={data} showDetails= {marketId}/>
-          </div>
             <Details details={details} />
         </div>
     </div>
