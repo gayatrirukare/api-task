@@ -2,9 +2,7 @@ import react, { Component } from 'react'
 import axios from 'axios' 
 import 'antd/dist/antd.css';
 import './index.css';
-import { Button , Input } from 'antd';
 import styles from './mystyle.module.css'; 
-import Table from './Table'
 
 class Details extends Component {
     
@@ -20,20 +18,21 @@ class Details extends Component {
     }
     
     render(){
-        return (
-            <div className={styles.d1}>
+        const details = this.props.details
+        return  (
+            <div className={styles.detailDiv}>
                 <h5>Market Details</h5>
-                <div className={styles.d2}>
-                    <p className={styles.d1A}>Address:</p> {this.props.details.Address}
+                <div className={styles.detailInfo}>
+                    <p className={styles.detailInfoHeader}>Address:</p> {this.props.details.Address}
                 </div>
-                <div className={styles.d2}>
-                    <p className={styles.d1A}><a target="_blank" href={this.props.details.GoogleLink}>GoogleLink</a></p>
+                <div className={styles.detailInfo}>
+                    <p className={styles.detailInfoHeader}><a target="_blank" href={this.props.details.GoogleLink}>GoogleLink</a></p>
                 </div>
-                <div className={styles.d2}> 
-                    <p className={styles.d1A}>Products:</p> {this.props.details.Products}
+                <div className={styles.detailInfo}> 
+                    <p className={styles.detailInfoHeader}>Products:</p> {this.props.details.Products}
                 </div>
-                <div className={styles.d2}>
-                    <p className={styles.d1A}>Schedule:</p> {this.props.details.Schedule}
+                <div className={styles.detailInfo}>
+                    <p className={styles.detailInfoHeader}>Schedule:</p> {this.props.details.Schedule}
                 </div>
                 
             </div>

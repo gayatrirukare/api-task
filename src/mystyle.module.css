@@ -24,7 +24,7 @@ background-color: rgb(134, 133, 133);
     margin-left: 2%;
     
   }
-  .d1{
+  .detailDiv{
     box-shadow: 1px 1px 5px 1px #fff;
     border: white;
     border-style: inset;
@@ -39,23 +39,23 @@ background-color: rgb(134, 133, 133);
     padding-right: 10%;
    padding-top: 2%;
   }
-  .d1 h5{
+  .detailDiv h5{
     text-align:  Center;
     color: blanchedalmond;
   }
-  .td1{
+  .tableDetail{
     display: flex;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 2%;
     
   }
-  .d1A{
+  .detailInfoHeader{
     font-weight:600;
     margin-right: 1%;
   
   }
-  .d2{
+  .detailInfo{
     display: flex;
     padding-right: 4%;
     color :blanchedalmond;
@@ -65,7 +65,7 @@ background-color: rgb(134, 133, 133);
     margin-bottom: 12px;
 
   }
-  .d2:last-child{
+  .detailInfo:last-child{
     border-bottom-style: none;
   }
 
