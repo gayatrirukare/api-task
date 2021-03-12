@@ -49,7 +49,7 @@ function App() {
     setData(newArr)
   }; 
   function marketId(id) {
-    axios.get ('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id='+id)
+    axios.get ('https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id='+id)
         .then(response => {
           setDetails(response.data.marketdetails)   
         })
