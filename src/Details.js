@@ -18,7 +18,7 @@ class Details extends Component {
     }
     
     render(){
-        const details = this.props.details
+        
         return  (
             <div className={styles.detailDiv}>
                 <h5>Market Details</h5>

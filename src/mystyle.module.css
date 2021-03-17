@@ -8,9 +8,11 @@ background-color: rgb(134, 133, 133);
     width:200px;
     height: auto;
     display: inline-flex;
+    margin-bottom: 1%;
+
   };
   .pt{
-    margin-top: 5%;
+    margin-top: 2%;
   }
   .btn{
     border-radius: 2 px;
@@ -31,23 +33,26 @@ background-color: rgb(134, 133, 133);
     border-width: thin;
     font-size: medium;
     text-align: left;
-    background-color: #212529;
+    background-color:#2125297d;
     width: 600px;
     height: fit-content;
     margin-left: 5%;
     padding-left: 4%;
     padding-right: 10%;
    padding-top: 2%;
+   position: relative;
+   margin: auto;
   }
   .detailDiv h5{
     text-align:  Center;
     color: blanchedalmond;
   }
   .tableDetail{
-    display: flex;
+
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 2%;
+    
     
   }
   .detailInfoHeader{
@@ -71,4 +76,20 @@ background-color: rgb(134, 133, 133);
 
   .tablediv {
     box-shadow: 1px 1px 5px 1px #fff;
+  }
+  .mapdiv{
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    float: right;
+    border-style:groove;
+    border-color: black;
+    
+  }
+  .sidePanel{
+    float: left;
+    margin-left: 70%;
+  }
+  .maindiv{
+    display: flex;
   }

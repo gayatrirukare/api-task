@@ -41,24 +41,16 @@ class Market extends Component {
     
     render(){
         return (
-            <div className={styles.pt}>
-                <h1 style={{
-                color: 'rgb(241 236 236)',
-              }}>Markets near you</h1>
-                <div>
-                    <div className={styles.inputGroup }>
+        <div className={styles.inputGroup }>
                         <Input type="number"  className={styles.inputText} placeholder="Enter ZIP"
                         aria-label="Enter ZIP Code" aria-describedby="basic-addon2" onChange={this.handleTopicChange} onKeyPress={this.handleKeypress} />
                         <div  className={styles.btn} >
                         <Button type="primary"  className={styles.primaryBtn} onClick={this.handleSubmit} >
                             Search 
                         </Button>
-
+                    
                         </div>
                     </div>
-                </div>
-
-            </div>
         )
     }
      

@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Table from './Table';
 import "./App.css";
 import Market from './Market'
 import Details from './Details'
 import axios from 'axios' 
 import styles from './mystyle.module.css'; 
+import MapComponent from "./MapComponent";
 
 function App() {
   const [data, setData] = useState([]);
@@ -59,12 +60,29 @@ function App() {
     
   }  
   return (
+    
     <div className="App">
-        < Market getZipCode={getZip}/>
-      <div className={styles.tableDetail}>
-            <Table columns={columns} data={data} showDetails= {marketId}/>
-            <Details details={details} />
+      <header>
+          <div className={styles.pt}>
+        <h1 style={{
+        color: 'rgb(241 236 236)',
+          }}>Markets near you</h1>
         </div>
+        < Market getZipCode={getZip}/>
+
+      </header>
+      <div className={styles.maindiv}>
+        <div className={styles.mapdiv}>
+          <MapComponent/>
+          <Details details={details} />
+        </div>
+        <div className={styles.sidePanel}>
+
+          <Table columns={columns} data={data} showDetails= {marketId}/>
+        </div>
+      </div>
+
+        
     </div>
   );
 }
