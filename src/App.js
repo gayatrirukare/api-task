@@ -81,7 +81,6 @@ function App() {
           <Table columns={columns} data={data} showDetails= {marketId}/>
         </div>
       </div>
-
         
     </div>
   );
