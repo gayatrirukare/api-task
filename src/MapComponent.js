@@ -49,7 +49,7 @@ class MapComponent extends Component {
               zoom={12}
               onClick={this.onMapClicked}>
                 <Marker onClick={this.onMarkerClick} 
-                  title={'The marker`s title will appear as a tooltip.'} 
+                  title={'Please Click on marker to get Address'} 
                   key = {this.props.locationMarker.uri}
                   name = {this.props.locationMarker.Address}
                   position={{lat :this.props.locationMarker.lat, lng:this.props.locationMarker.lng }} />
