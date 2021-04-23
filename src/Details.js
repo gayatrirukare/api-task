@@ -1,5 +1,4 @@
 import react, { Component } from 'react'
-import axios from 'axios' 
 import 'antd/dist/antd.css';
 import './index.css';
 import styles from './mystyle.module.css'; 
@@ -18,7 +17,6 @@ class Details extends Component {
     }
     
     render(){
-        
         return  (
             <div className={styles.detailDiv}>
                 <h5>Market Details</h5>
