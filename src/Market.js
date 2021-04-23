@@ -26,19 +26,13 @@ class Market extends Component {
         if (event.charCode === 13) {
             
           this.handleSubmit(event);
-        }
-        
+        }        
       };
     handleSubmit =event =>{
         event.preventDefault();
         const zip =this.state.zip;
-        this.props.getZipCode(zip);
-        console.log(zip)
-        
-            
+        this.props.getZipCode(zip);            
     }
-
-    
     render(){
         return (
         <div className={styles.inputGroup }>

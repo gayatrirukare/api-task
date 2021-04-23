@@ -1,14 +1,25 @@
 import './App.css';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper , GoogleMap} from 'google-maps-react';
 import { Component } from 'react';
 
 class MapComponent extends Component {
-  state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-  };
- 
+
+  constructor(props) {
+    super(props)
+  
+      this.state = {
+        showingInfoWindow: false,
+        activeMarker: {},
+        selectedPlace: {},
+        "lat": '',
+        "lng": '',
+        "uri" : '',
+        "Address" : ''
+      };
+      
+  }
+
+  
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
@@ -24,39 +35,38 @@ class MapComponent extends Component {
       })
     }
   };
+  
 
   render(){
+
       return (
         <div className="App">
-          <Map google={this.props.google}
+          
+         <Map google={this.props.google}
               style={{width: '100%', height: '100%', position: 'relative'}}
               className={'map'}
-              zoom={12}>
-            <Marker onClick={this.onMarkerClick}
-              title={'The marker`s title will appear as a tooltip.'}
-              name={'94131'}
-              position={{lat:37.740105 , lng:-122.438232}} />
-            <Marker onClick={this.onMarkerClick}
-              name={'94112'}
-              position={{lat: 37.722549, lng:-122.441063}} />
-            
-            <Marker onClick={this.onMarkerClick}
-              name={'94110'}
-              position={{lat: 37.609415, lng: -122.495081}}
-              />
+              initialCenter  ={{lat :37.090240, lng:-95.712891}}
+              zoom={12}
+              onClick={this.onMapClicked}>
+                <Marker onClick={this.onMarkerClick} 
+                  title={'The marker`s title will appear as a tooltip.'} 
+                  key = {this.props.locationMarker.uri}
+                  name = {this.props.locationMarker.Address}
+                  position={{lat :this.props.locationMarker.lat, lng:this.props.locationMarker.lng }} />
+           
               <InfoWindow
                     onOpen={this.windowHasOpened}
                     onClose={this.windowHasClosed}        
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}>
                       <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
+                        <h6>{this.state.selectedPlace.name}</h6>
                       </div>
               </InfoWindow>
 
           </Map>
       
-            
+              
         </div>
       );
       }
