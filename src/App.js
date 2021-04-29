@@ -85,7 +85,7 @@ function App() {
           <div className={styles.pt}>
         <h1 style={{
         color: 'rgb(241 236 236)',
-          }}>Markets near you</h1>
+          }}>Farmer's Markets near you</h1>
         </div>
         < Market getZipCode={getZip}/>
 
